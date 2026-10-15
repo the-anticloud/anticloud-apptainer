@@ -1,185 +1,83 @@
 # APPTAINER
 
-![license](https://img.shields.io/badge/license-license-blue) ![offline-first](https://img.shields.io/badge/offline--first-air--gap-green) ![audit](https://img.shields.io/badge/audit-SHA3--256-orange) ![category](https://img.shields.io/badge/category-supercomputer-lightgrey)
-
-> Anticloud-hardened packaging of the upstream project `APPTAINER` in category **SUPERCOMPUTER**. No upstream snapshot is present on disk for this project; the pinned commit below was resolved during the second documentation pass, and the 12-improvement overlay lives in `anticloud/`. Every fact in this file traces to a file on disk in this project directory.
-
-**Category:** SUPERCOMPUTER · **Upstream:** https://github.com/kaczmarj/apptainer-in-docker · **Upstream pin:** `977b4525506ca510d3601023589efbc789791893` · **Vendor:** Anticloud FZ LLE
-
----
+> Anticloud offline package — upstream: apptainer/apptainer @ `main`.
 
 ## What This Project Does
 
-**APPTAINER** — Apptainer-in-Docker - running the Apptainer (formerly Singularity) HPC container runtime under Docker (C).
+Apptainer: Application containers for Linux
 
-The project is vendored into the Anticloud project at a pinned upstream commit and hardened with the standard 12-improvement overlay (see the Benchmarks section).
+**Topics:** apptainer, containers, hpc, linux, rootless-containers, science, singularity, singularity-container
 
-Project-specific facts detected in this directory:
+## Upstream README
 
-- Ecosystem: **Unknown (no standard manifest detected)** (manifests: none detected; scanned in project root)
-- Upstream snapshot: none on disk for this project; only the Anticloud packaging directories are present
-- Upstream commit pinned for this packaging: `977b4525506ca510d3601023589efbc789791893`
+# Apptainer
 
----
+[![CI](https://github.com/apptainer/apptainer/actions/workflows/ci.yml/badge.svg)](https://github.com/apptainer/apptainer/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/pkg.golang.dev/github.com/apptainer/apptainer.svg)](https://pkg.go.dev/github.com/apptainer/apptainer)
+[![Go Report Card](https://goreportcard.com/badge/github.com/apptainer/apptainer)](https://goreportcard.com/report/github.com/apptainer/apptainer)
 
-## Installation
+- [Documentation](https://apptainer.org/docs/)
+- [Support](#support)
+- [Community Meetings / Minutes / Roadmap](https://drive.google.com/drive/u/0/folders/1npfBhIDxqeJIUHZ0tMeuHPvc_iB4T2B6)
+- [Project License](LICENSE.md)
+- [Guidelines for Contributing](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Citation](#citing-apptainer)
 
-No installation section was found in the upstream readme, so the commands below are generated from the manifests detected in this project directory.
+## What is Apptainer?
 
-```sh
-# No upstream snapshot on disk; consult the upstream project (see the
-# Upstream section) for build and install instructions.
-```
+Apptainer is an open source container platform designed to be simple, fast,
+and secure. Many container platforms are available, but Apptainer is designed
+for ease-of-use on shared systems and in high performance computing (HPC)
+environments. It features:
 
-Overlay install (this project):
+- An immutable single-file container image format, supporting cryptographic
+  signatures and encryption.
+- Integration over isolation by default. Easily make use of GPUs, high speed
+  networks, parallel filesystems on a cluster or server.
+- Mobility of compute. The single file SIF container format is easy to transport
+  and share.
+- A simple, effective security model. You are the same user inside a container
+  as outside, and cannot gain additional privilege on the host system by
+  default.
 
-```sh
-python -m pip install -e anticloud/     # overlay package with the 12 improvements
-python anticloud/cli.py --help          # 13 subcommands, JSON stdout
-```
+Apptainer is open source software, distributed under the [BSD License](LICENSE.md).
 
----
+Apptainer was formerly known as Singularity and is now [a part of the
+Linux Foundation](https://apptainer.org/news/community-announcement-20211130).
+When migrating from Singularity see the
+[admin migration documentation](https://apptainer.org/docs/admin/main/singularity_migration.html)
+and
+[user compatibility documentation](https://apptainer.org/docs/user/main/singularity_compatibility.html).
 
-## Usage
+## Getting Started with Apptainer
 
-No usage section was found in the upstream readme. Entry points detected in this project directory:
+To install Apptainer from source, see the [installation
+instructions](INSTALL.md). For other installation options, see [our
+guide](https://apptainer.org/docs/admin/main/installation.html).
 
-Browse the snapshot layout listed under What This Project Does and follow the upstream run instructions for the detected ecosystem (Unknown (no standard manifest detected)).
+System administrators can learn how to configure Apptainer, and get an
+overview of its architecture and security features in the [administrator
+guide](https://apptainer.org/docs/admin/main/).
 
-Anticloud overlay CLI (available in every project):
+For users, see the [user guide](https://apptainer.org/docs/user/main/)
+for details on how to run and build containers with Apptainer.
 
-```sh
-python anticloud/cli.py --help     # 13 subcommands, JSON stdout
-python anticloud/cli.py checks     # run the 16-check suite
-```
+## Contributing to Apptainer
 
----
+Community contributions are always greatly appreciated. To start developing
+Apptainer, check out the [guidelines for contributing](CONTRIBUTING.md).
 
-## API
+Please note we have a [code of conduct](CODE_OF_CONDUCT.md). Please follow it in
+all your interactions with the project members and users.
 
-The upstream API surface is defined by the `APPTAINER` upstream project (Unknown (no standard manifest detected) ecosystem); no source snapshot is vendored for this project. Entry points recorded for this packaging:
-
-- Overlay API: `anticloud/cli.py` exposes 13 subcommands with JSON stdout; `anticloud/bench/runner.py` runs the 16-check suite; `anticloud/provenance/chain.py` exposes the SHA3-256 + Ed25519 provenance chain.
-
----
-
-## Dependencies
-
-| Metric | Value |
-|--------|-------|
-| Ecosystem | Unknown (no standard manifest detected) |
-| Manifests detected | none |
-| Files in snapshot | not captured in this benchmark snapshot |
-| Lines of code | not captured in this benchmark snapshot |
-| Dependency references | not captured in this benchmark snapshot |
-| Upstream license | Not captured in this benchmark snapshot (no upstream snapshot on disk) |
-| Overlay license | Anticommons 0.1.0 |
-
-Pinned lockfile: `anticloud/requirements.lock` (hash-pinned, PEP 508). SBOM: `sbom.cdx.json` (CycloneDX 1.5, pinned to the upstream SHA).
-
----
-
-## Configuration
-
-No configuration section was found in the upstream readme. Configuration-relevant files detected in this project directory:
-
-- None detected at the snapshot root; consult the upstream documentation link in the Upstream section.
-
-Overlay configuration (Anticloud):
-
-- `anticloud/` - improvement overlay; environment-driven, no cloud dependency
-- `LEDGERS/` - aioss tamper-evident chain files (per-project, verified with `aioss verify --live`)
-- `ISOLATED_LAB_RESULTS/` - reproducibility record (environment, reproduction steps, result register, evidence)
-- `OFFICIAL_BENCHMARKS/` - 26 framework assessments for this project
-
----
-
-## Contributing
-
-Upstream contributions: fork the `APPTAINER` project, create a feature branch, and open a pull request against upstream. Keep `UPSTREAM_CLONE/` untouched in this packaging; put improvements in the `anticloud/` overlay.
-
-Overlay contributions: run the 16-check suite before opening a pull request:
-
-```sh
-python anticloud/bench/runner.py --cwd anticloud
-```
-
----
+We also welcome contributions to our [user
+guide](https://github.com/ap
 
 ## License
 
-**Upstream license: Not captured in this benchmark snapshot (no upstream snapshot on disk).** The upstream project linked in the Upstream section is the authoritative source for its license terms.
+Upstream terms preserved in `THIRD_PARTY_LICENSES/`. Overlay licensed under Anticommons 0.1.0.
 
-### Anticommons 0.1.0 overlay
+## Verification
 
-The Anticloud integration overlay in `anticloud/` - improvements 1 through 12 listed under Benchmarks - is licensed under **Anticommons 0.1.0**. Upstream code remains under its original Not captured in this benchmark snapshot (no upstream snapshot on disk) terms. See `ANTICOMMONS_LICENSE.md` in this directory for the overlay terms and contact.
-
-SPDX: `Not captured in this benchmark snapshot (no upstream snapshot on disk)` (upstream) + Anticommons 0.1.0 (overlay, dual).
-
----
-
-## Upstream
-
-- **Project:** `APPTAINER` (category: SUPERCOMPUTER)
-- **Upstream URL:** https://github.com/kaczmarj/apptainer-in-docker
-- **Pinned commit (SHA):** `977b4525506ca510d3601023589efbc789791893`
-- **Branch:** main
-- **Pin provenance:** GitHub API commits/main. The parent-project stamp is explicitly rejected for this project.
-- **Snapshot location:** none on disk for this project
-- **Benchmark snapshot:** `BENCH.json`
-
----
-
-## Benchmarks
-
-Measured by the Anticloud assurance suite. Every value below is read from this
-project's `BENCH.json`, produced by a real run — the SHA3-256 of that file is
-`33c2d05e5337801ddcf34ad95b5a16127909202ee33a3967d5b5de22dafc9962`.
-
-| Framework | Controls | Evidence | Coverage | Result |
-|---|---|---|---|---|
-| OWASP Top 10 for LLM Applications | 10 controls mapped | 10 with evidence | 100.0% | PASS |
-| OWASP Top 10 (2021) | 9 controls mapped | 9 with evidence | 100.0% | PASS |
-| SOC 2 Type II readiness | 9 controls mapped | 9 with evidence | 100.0% | PASS |
-| NIST AI Risk Management Framework | 8 controls mapped | 8 with evidence | 100.0% | PASS |
-| NIST SP 800-53 Rev. 5 | 12 controls mapped | 12 with evidence | 100.0% | PASS |
-| NIST Cybersecurity Framework 2.0 | 8 controls mapped | 8 with evidence | 100.0% | PASS |
-| FedRAMP Rev. 5 | 10 controls mapped | 10 with evidence | 100.0% | PASS |
-| PCI DSS v4.0.1 | 11 controls mapped | 11 with evidence | 100.0% | PASS |
-| ISO/IEC 27001:2022 | 9 controls mapped | 9 with evidence | 100.0% | PASS |
-| MITRE ATT&CK v16 | 12 controls mapped | 12 with evidence | 100.0% | PASS |
-| ML Technology Readiness Level | TRL 8 | 8/8 criteria | | PASS |
-
-**Overall: 16/16 checks passing.**
-
-See `ISOLATED_LAB_RESULTS/03_Result_Register.md` for the 16-check register with pass condition, command and observed value per check.
-
-Framework folders in `OFFICIAL_BENCHMARKS/` state the control set and the
-evidence source bound to each control. This project does not claim an audit
-opinion, a SOC report, a FedRAMP authorisation or a PCI attestation — those are
-issued by an independent assessor.
-
-
-
-## Archives and Permanent Records
-
-| Platform | Identifier | Volume |
-|---|---|---|
-| Harvard Dataverse | DOI 10.7910/DVN/YMJKOG | 145 citable datasets |
-| AIOSS verification kit | DOI 10.7910/DVN/OORKNJ | Offline hash verification |
-| Zenodo (CERN) | — | 146 records, DOI-registered |
-| OSF | — | 144 preregistered records |
-| Figshare | author 20849885 | Research data and figures |
-| Internet Archive | aioss-format, Anticode | Permanent binary specification |
-| ORCID | 0009-0009-2233-6107 | Permanent researcher ID |
-| Kaggle | pax-millennium-20 | Reproducible T4 benchmark run |
-
-
-
-## Press and Independent Publication
-
-The PAX benchmark release was distributed by Newsfile wire to 336 outlets
-(312 Web, 23 Terminal, 1 Application), including Yahoo Finance, The Globe and Mail, Business Insider, National Post, Financial Post, StreetInsider, Digital Journal, Barchart, International Business Times, and fox47 · National Law Review.
-Wire distribution makes the announcement dated, public, and indexed, which
-makes the claim checkable.
-
+Recompute the SHA3-256 of `BENCH.json` and compare to this package’s register. Any drift = invalid package.
